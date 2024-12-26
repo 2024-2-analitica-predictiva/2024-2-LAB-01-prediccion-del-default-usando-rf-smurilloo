@@ -236,7 +236,7 @@ with tqdm(total=len(datasets), desc="Cálculo de métricas") as pbar:
         calculate_metrics(x, y, dataset_name)
         pbar.update(1)  # Actualizar la barra de progreso
 
-# Guardar métricas en un archivo JSON
+# Guardar métricas en un archivo JSON (como un solo objeto JSON)
 output_metrics_path = "files/output/metrics.json"
 
 # Crear el directorio si no existe
@@ -253,6 +253,6 @@ def convert_to_serializable(obj):
     else:
         return obj
 
-# Guardar las métricas
+# Guardar las métricas como un único objeto JSON
 with open(output_metrics_path, "w") as f:
     json.dump(metrics, f, indent=4, default=convert_to_serializable)
