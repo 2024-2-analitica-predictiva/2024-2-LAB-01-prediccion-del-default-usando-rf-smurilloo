@@ -165,7 +165,7 @@ param_grid = {
     "classifier__min_samples_split": [2, 5]
 }
 
-cv = StratifiedKFold(n_splits=2, shuffle=True, random_state=42)
+cv = StratifiedKFold(n_splits=10, shuffle=True, random_state=42)
 
 # Crear una lista de combinaciones de hiperparámetros para la barra de progreso
 param_combinations = [
